@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Poppins:wght@400;600;700;800;900&family=Bebas+Neue&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #DCDCDC;
+}
+
+.navbar {
+    background-color: #DCDCDC !important; 
+    padding: 16px 24px;
+    border-bottom: 1px solid #c0c0c0; 
+}
+.navbar-brand {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+}
+.nav-link {
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-left: 12px;
+}
+
+/* ===== FOOTER ===== */
+.footer-page {
+    background-color: #DCDCDC; 
+}
+
+.footer-heading {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    line-height: 0.9;
+    letter-spacing: 1px;
+}
+
+.footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 8px; 
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 992px) {
+
+
+    .border-end-lg {
+        border-right: 2px solid #000 !important;
+    }
+
+    .footer-page h2 {
+        line-height: 1.1;
+    }
+
+    .border-start-lg {
+        border-left: 1px solid #000 !important;
+    }
+
+
+    .nav-link {
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+}

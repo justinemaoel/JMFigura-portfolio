@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Poppins:wght@400;600;700;800;900&family=Bebas+Neue&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #DCDCDC;}
+
+.navbar {
+    background-color: #DCDCDC !important; 
+    padding: 16px 24px;
+    border-bottom: 1px solid #c0c0c0; 
+}
+.navbar-brand {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+}
+.nav-link {
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-left: 12px;
+}
+
+.about-me {
+    background-color: #DCDCDC !important; 
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.about-me h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    letter-spacing: -2px;
+    font-size: 3rem; 
+    line-height: 1;
+}
+
+
+.about-me .lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1a1a1a !important;
+    text-align: justify;
+}
+
+
+.about-me .img-fluid {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.profile-img {
+    content: url('images/mobile-profile.png'); 
+    width: 100%;
+    max-width: 450px;
+    margin-top: 40px;
+}
+
+/* ===== SKILLS & BADGES ===== */
+.skills-and-expertise {
+    background-color: #DCDCDC !important;
+    border-top: 1px solid #c0c0c0;
+}
+
+.skills-and-expertise h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.progress {
+    background-color: #c0c0c0;
+    border-radius: 0; 
+}
+
+.progress-bar {
+    transition: width 1.5s ease-in-out;
+}
+
+
+.skills-and-expertise .col-3 img {
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.skills-and-expertise img[alt*="Cisco"], 
+.skills-and-expertise img[alt*="Badge"] {
+    width: 60px;
+    height: auto;
+}
+
+/* ===== FOOTER ===== */
+
+
+.footer-page {
+    background-color: #DCDCDC; 
+}
+
+.footer-heading {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    line-height: 0.9;
+    letter-spacing: 1px;
+}
+
+.footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 8px; 
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+/* ===== DESKTOP ===== */
+@media (min-width: 992px) {
+    .landing-page h1 {
+        font-size: 8rem; 
+        letter-spacing: -4px;
+        line-height: 0.8;
+    }
+
+    .border-end-lg {
+        border-right: 2px solid #000 !important;
+    }
+
+    .footer-page h2 {
+        line-height: 1.1;
+    }
+
+    .border-start-lg {
+        border-left: 1px solid #000 !important;
+    }
+
+    .nav-link {
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+}
