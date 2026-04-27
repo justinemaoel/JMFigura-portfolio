@@ -66,6 +66,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+
+            if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

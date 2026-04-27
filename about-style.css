@@ -2,7 +2,25 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #DCDCDC;}
+    background-color: #DCDCDC;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+body.fade-out {
+    animation: fadeOut 0.35s ease forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-12px); }
+}
+
+
 
 .navbar {
     background-color: #DCDCDC !important; 
