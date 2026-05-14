@@ -8,58 +8,10 @@
     <link rel="stylesheet" href="index-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <style>
-        /* ── Transparent modal content box ── */
-        #graphicModal .modal-content {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
-
-        #graphicModal .modal-header {
-            background: transparent !important;
-            border: none !important;
-            padding-bottom: 0;
-        }
-
-        /* ── Near full-screen dialog ── */
-        #graphicModal .modal-dialog {
-            max-width: 95vw;
-            width: 95vw;
-            margin: 1.5rem auto;
-        }
-
-        /* ── Images fill the space, no awkward sizing ── */
-        #graphicModal .carousel-img {
-            width: 100%;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        /* ── Close button & title visible on dark backdrop ── */
-        #graphicModal .btn-close {
-            filter: invert(1) brightness(2);
-            opacity: 1;
-        }
-
-        #graphicModal .modal-title {
-            color: #fff;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.7);
-        }
-
-        /* ── Carousel controls ── */
-        #graphicModal .carousel-control-prev,
-        #graphicModal .carousel-control-next {
-            width: 5%;
-        }
-    </style>
 </head>
 <body>
 
-<!-- page-wrapper handles fade animation instead of body (body animation breaks modals) -->
 <div class="page-wrapper">
-
     <nav class="navbar sticky-top navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">MAOEL</a>
@@ -154,9 +106,6 @@
         <div class="container">
             <h2 class="fw-black mb-5">My Projects</h2>
             <div class="row g-4">
-
-                <!-- Graphic Design Card -->
-                <!-- ✅ FIX: Replaced JS-triggered button with Bootstrap data attributes -->
                 <div class="col-md-6">
                     <button type="button" class="proj-card-btn" data-bs-toggle="modal" data-bs-target="#graphicModal">
                         <div class="proj-card">
@@ -171,7 +120,6 @@
                     </button>
                 </div>
 
-                <!-- Web Dev Card -->
                 <div class="col-md-6">
                     <a href="https://gnci-lostandfound.free.nf/" target="_blank" class="proj-card-btn">
                         <div class="proj-card">

@@ -20,7 +20,6 @@ body {
     to   { opacity: 0; }
 }
 
-/* Apply fade only to page content, not body itself */
 .page-wrapper {
     animation: fadeIn 0.5s ease forwards;
 }
@@ -63,7 +62,6 @@ body {
     line-height: 0.85;
 }
 
-/* MOBILE: static so it doesn't overlap */
 .graphic-designer {
     font-family: "Allison", cursive;
     font-size: 2rem;
@@ -183,7 +181,6 @@ body {
     margin: 0;
 }
 
-/* Button wrapper for modal trigger */
 .proj-card-btn {
     width: 100%;
     border: none;
@@ -192,8 +189,8 @@ body {
     text-align: left;
     display: block;
     cursor: pointer;
-    text-decoration: none;  /* add this */
-    color: inherit;          /* add this */
+    text-decoration: none; 
+    color: inherit;        
 }
 
 .proj-card-btn:focus {
@@ -245,6 +242,46 @@ body {
     border-color: #111 !important; 
 }
 
+#graphicModal .modal-content {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#graphicModal .modal-header {
+    background: transparent !important;
+    border: none !important;
+    padding-bottom: 0;
+}
+
+#graphicModal .modal-dialog {
+    max-width: 95vw;
+    width: 95vw;
+    margin: 1.5rem auto;
+}
+
+#graphicModal .carousel-img {
+    width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#graphicModal .btn-close {
+    filter: invert(1) brightness(2);
+    opacity: 1;
+}
+
+#graphicModal .modal-title {
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+}
+
+#graphicModal .carousel-control-prev,
+#graphicModal .carousel-control-next {
+    width: 5%;
+}
+
 /* ===== DESKTOP ===== */
 @media (min-width: 992px) {
 
@@ -252,7 +289,7 @@ body {
         text-align: left;
         padding: 0;
         height: 100vh;
-        align-items: center; /* centered, no padding-top */
+        align-items: center;
     }
 
     .landing-page h1 {
@@ -266,7 +303,6 @@ body {
         margin-bottom: 10px;
     }
 
-    /* DESKTOP: absolute positioning */
     .graphic-designer {
         position: absolute;
         font-size: 2.8rem;
