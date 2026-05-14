@@ -7,10 +7,60 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="index-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ── Transparent modal content box ── */
+        #graphicModal .modal-content {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        #graphicModal .modal-header {
+            background: transparent !important;
+            border: none !important;
+            padding-bottom: 0;
+        }
+
+        /* ── Near full-screen dialog ── */
+        #graphicModal .modal-dialog {
+            max-width: 95vw;
+            width: 95vw;
+            margin: 1.5rem auto;
+        }
+
+        /* ── Images fill the space, no awkward sizing ── */
+        #graphicModal .carousel-img {
+            width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        /* ── Close button & title visible on dark backdrop ── */
+        #graphicModal .btn-close {
+            filter: invert(1) brightness(2);
+            opacity: 1;
+        }
+
+        #graphicModal .modal-title {
+            color: #fff;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+        }
+
+        /* ── Carousel controls ── */
+        #graphicModal .carousel-control-prev,
+        #graphicModal .carousel-control-next {
+            width: 5%;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+<!-- page-wrapper handles fade animation instead of body (body animation breaks modals) -->
+<div class="page-wrapper">
+
+    <nav class="navbar sticky-top navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">MAOEL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,34 +85,32 @@
     <section class="landing-page">
         <div class="container">
             <div class="row align-items-center">
-                
                 <div class="col-lg-6">
                     <div class="hero-text-wrapper mb-4">
                         <h6 class="text-uppercase fw-bold">Hello, I'm</h6>
                         <h1 class="display-1 fw-black mb-0">MAOEL</h1>
-                        <p class="graphic-designer">Graphic Designer</p>
+                        <p class="graphic-designer">Creative Designer & Web Developer</p>
                     </div>
                     
                     <p class="mt-5 mb-4 lead">
-                        I turn ideas into visuals that connect.<br>
-                        Create. Inspire. Impact.
+                        Designing with purpose, developing with precision.<br>
+                        Design. Develop. Deploy.
                     </p>
 
-                <div class="d-flex gap-3 btn-container">
-                    <a href="#projects-section" class="btn btn-dark px-4 py-2 fw-bold">View My Work</a>
-                    <a href="about.html" class="btn btn-outline-dark px-4 py-2 fw-bold">About Me</a>
-                </div>
+                    <div class="d-flex gap-3 btn-container">
+                        <a href="#projects-section" class="btn btn-dark px-4 py-2 fw-bold">View My Work</a>
+                        <a href="about.html" class="btn btn-outline-dark px-4 py-2 fw-bold">About Me</a>
+                    </div>
                 </div>
 
                 <div class="col-lg-6 mt-5 mt-lg-0 text-center">
                     <img src="images/desktop-picture.png" alt="Maoel Profile" class="img-fluid profile-img">
                 </div>
-
             </div>
         </div>
     </section>
 
-<section class="about-me py-5">
+    <section class="about-me py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 about-left-col pe-lg-5">
@@ -75,17 +123,22 @@
                 <div class="col-lg-7 ps-lg-5 mt-5 mt-lg-0">
                     <h6 class="mb-4 text-center text-lg-start">WHAT I DO</h6>
                     <div class="row text-center">
-                        <div class="col-md-4 mb-4 mb-md-0">
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
                             <img src="images/graphic-design.svg" alt="Icon" class="service-icon">
                             <h5>Graphic Design</h5>
                             <p>Posters, Covers, Visual Identity and more.</p>
                         </div>
-                        <div class="col-md-4 mb-4 mb-md-0">
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
                             <img src="images/video-editing.svg" alt="Icon" class="service-icon">
                             <h5>Video Editing</h5>
                             <p>Clean cuts, smooth flow, and mood-driven edits.</p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
+                            <img src="images/web dev.svg" alt="Icon" class="service-icon">
+                            <h5>Web Development</h5>
+                            <p>Responsive, efficient, and modern web solutions.</p>
+                        </div>
+                        <div class="col-6 col-md-3">
                             <img src="images/ui-ux.svg" alt="Icon" class="service-icon">
                             <h5>UI/UX</h5>
                             <p>Simple, intuitive, and user-focused design.</p>
@@ -96,51 +149,45 @@
         </div>
     </section>
 
-<section class="projects py-5">
-    <div class="container">
-        <h2 id="projects-section" class="fw-black mb-5">MY PERSONAL PROJECTS</h2>
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects py-5" id="projects-section">
+        <div class="container">
+            <h2 class="fw-black mb-5">My Projects</h2>
+            <div class="row g-4">
 
-        <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
-            
-            <div class="col">
-                <div class="project-card">
-                    <img src="images/Dahyun Pink.png" class="img-fluid project-img" alt="Dahyun Design">
+                <!-- Graphic Design Card -->
+                <!-- ✅ FIX: Replaced JS-triggered button with Bootstrap data attributes -->
+                <div class="col-md-6">
+                    <button type="button" class="proj-card-btn" data-bs-toggle="modal" data-bs-target="#graphicModal">
+                        <div class="proj-card">
+                            <div class="proj-card-img">
+                                <img src="images/Projects Mockup.png" alt="Graphic Design">
+                            </div>
+                            <div class="proj-card-body">
+                                <h3 class="proj-title">Graphic Design</h3>
+                                <p class="proj-desc">A showcase of versatile design projects, featuring a mix of modern editorial layouts, bold typography, and vibrant digital illustrations.</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Web Dev Card -->
+                <div class="col-md-6">
+                    <a href="https://gnci-lostandfound.free.nf/" target="_blank" class="proj-card-btn">
+                        <div class="proj-card">
+                            <div class="proj-card-img">
+                                <img src="images/lostandfound.png" alt="GNCI Lost and Found">
+                            </div>
+                            <div class="proj-card-body">
+                                <h3 class="proj-title">GNCI Lost and Found System</h3>
+                                <p class="proj-desc">A community-focused web application designed to help students and staff report and recover misplaced items on campus.</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="project-card">
-                    <img src="images/dahyun sunshine 2.0.png" class="img-fluid project-img" alt="Sunshine Design">
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="project-card">
-                    <img src="images/Sana Part 2.png" class="img-fluid project-img" alt="Sana Design">
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="project-card">
-                    <img src="images/Nirvana square 1.png" class="img-fluid project-img" alt="Nirvana Album">
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="project-card">
-                    <img src="images/Nirvana poster.png" class="img-fluid project-img" alt="Nirvana Poster">
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="project-card">
-                    <img src="images/burger.png" class="img-fluid project-img" alt="Food Advertisement">
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
     <footer class="footer-page py-5">
         <div class="container">
@@ -172,24 +219,73 @@
             </div>
         </div>
     </footer>
+</div>
 
-    <script>
-        document.querySelectorAll('a').forEach(link => {
-            const href = link.getAttribute('href');
-            if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+<div class="modal fade" id="graphicModal" tabindex="-1" aria-labelledby="graphicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="graphicModalLabel">Graphic Design Projects</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="graphicCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#graphicCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#graphicCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#graphicCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#graphicCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#graphicCarousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#graphicCarousel" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#graphicCarousel" data-bs-slide-to="6"></button>
+                    </div>
+                    <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                            <img src="images/Dahyun Pink.png" class="d-block mx-auto carousel-img" alt="Dahyun Pink">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/dahyun sunshine 2.0.png" class="d-block mx-auto carousel-img" alt="Dahyun Sunshine">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/Sana Part 2.png" class="d-block mx-auto carousel-img" alt="Sana">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/Nirvana square 1.png" class="d-block mx-auto carousel-img" alt="Nirvana Album">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/Nirvana poster.png" class="d-block mx-auto carousel-img" alt="Nirvana Poster">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/burger.png" class="d-block mx-auto carousel-img" alt="Burger Ad">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/Creativity is not Optional.png" class="d-block mx-auto carousel-img" alt="Creativity Poster">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#graphicCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#graphicCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.body.classList.add('fade-out');
-
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 350); 
-            });
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('.page-wrapper').style.animation = 'fadeOut 0.35s ease forwards';
+            setTimeout(() => { window.location.href = href; }, 350);
         });
-    </script>
+    });
+</script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </body>
 </html>

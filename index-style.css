@@ -6,18 +6,23 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #DCDCDC; 
-    animation: fadeIn 0.5s ease forwards;
+    background-color: #DCDCDC;
+    /* REMOVED body animation — it creates a stacking context that traps modals */
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to   { opacity: 0; transform: translateY(-12px); }
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Apply fade only to page content, not body itself */
+.page-wrapper {
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .navbar {
@@ -49,23 +54,27 @@ body {
 
 .hero-text-wrapper {
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+}
 
 .landing-page h1 {
     font-size: 4.5rem;
     font-weight: 900;
-    line-height: 0.85; }
+    line-height: 0.85;
+}
 
+/* MOBILE: static so it doesn't overlap */
 .graphic-designer {
     font-family: "Allison", cursive;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #555;
-    position: absolute;
-    right: -15px;
-    bottom: -15px;
+    position: static;
+    display: block;
     transform: rotate(-3deg);
     z-index: 2;
     margin: 0 !important;
+    margin-top: -8px !important;
+    text-align: right;
 }
 
 .btn-container {
@@ -90,7 +99,8 @@ body {
 .about-me h2 {
     font-weight: 800;
     font-size: 2.2rem;
-    line-height: 1.1; }
+    line-height: 1.1;
+}
 
 .about-left-col { 
     border-bottom: 1.5px solid #111; 
@@ -105,10 +115,9 @@ body {
     filter: brightness(0);
 }
 
-.about-me h6{
+.about-me h6 {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-
 }
 
 .about-me h5 {
@@ -120,26 +129,84 @@ body {
 /* ===== PROJECT SECTION ===== */
 .projects h2 {
     font-family: "Poppins", sans-serif;
-    font-weight: bold;
+    font-weight: 900;
+    font-size: 2.5rem;
     letter-spacing: -1px;
     text-transform: uppercase;
 }
 
-.project-card {
+.proj-card {
+    border-radius: 16px;
     overflow: hidden;
-    background-color: #eee; 
-    transition: transform 0.3s ease;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-img {
+.proj-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+.proj-card-img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 260px;
+    overflow: hidden;
+}
+
+.proj-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-img {
+.proj-card:hover .proj-card-img img {
     transform: scale(1.05);
+}
+
+.proj-card-body {
+    padding: 24px;
+    text-align: left;
+}
+
+.proj-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.proj-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Button wrapper for modal trigger */
+.proj-card-btn {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;  /* add this */
+    color: inherit;          /* add this */
+}
+
+.proj-card-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* ===== MODAL CAROUSEL ===== */
+.carousel-img {
+    max-height: 600px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /* ===== FOOTER ===== */
@@ -166,7 +233,6 @@ body {
     color: #333;
 }
 
-
 .footer-page .btn-dark {
     background-color: #1a1a1a;
     border: none;
@@ -185,12 +251,12 @@ body {
     .landing-page {
         text-align: left;
         padding: 0;
-        height: 100vh; 
+        height: 100vh;
+        align-items: center; /* centered, no padding-top */
     }
 
-  
     .landing-page h1 {
-        font-size: 8rem !important; 
+        font-size: 7rem !important;
         line-height: 0.8;
     }
 
@@ -200,14 +266,16 @@ body {
         margin-bottom: 10px;
     }
 
-  
+    /* DESKTOP: absolute positioning */
     .graphic-designer {
-        font-size: 3.5rem;
-        right: -60px;
-        bottom: -10px;
+        position: absolute;
+        font-size: 2.8rem;
+        right: -30px;
+        bottom: -8px;
+        text-align: unset;
+        margin-top: 0 !important;
     }
 
-    
     .btn-container {
         flex-direction: row !important;
         justify-content: flex-start !important;
@@ -218,7 +286,6 @@ body {
         padding: 12px 40px !important;
     }
 
-   
     .profile-img {
         content: url('images/desktop-picture.png'); 
         max-width: 100%;
@@ -227,14 +294,12 @@ body {
         transform: scale(1.1); 
     }
 
-
     .about-left-col { 
         border-bottom: none; 
         border-right: 2px solid #111; 
         padding-bottom: 0; 
         margin-bottom: 0; 
     }
-
 
     .nav-link {
         transition: color 0.3s ease;
