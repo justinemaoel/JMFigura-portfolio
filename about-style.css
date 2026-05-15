@@ -80,7 +80,6 @@ body.fade-out {
 /* ===== SKILLS & BADGES ===== */
 .skills-and-expertise {
     background-color: #DCDCDC !important;
-    border-top: 1px solid #c0c0c0;
 }
 
 .skills-and-expertise h2 {
@@ -91,7 +90,7 @@ body.fade-out {
 
 .progress {
     background-color: #c0c0c0;
-    border-radius: 0; 
+    border-radius: 0px; 
 }
 
 .progress-bar {

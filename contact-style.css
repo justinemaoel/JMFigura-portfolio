@@ -41,7 +41,6 @@ body.fade-out {
     padding: 50px 0;
 }
 
-/* Info column — visible on all screen sizes */
 .contact-info {
     display: block;
     margin-bottom: 1rem;
@@ -100,14 +99,13 @@ body.fade-out {
     margin-top: 20px;
 }
 
-/* ===== TABLET (768px – 991px) ===== */
+/* ===== TABLET===== */
 @media (min-width: 768px) {
 
     .contact-section {
         padding: 60px 0;
     }
 
-    /* Info column with right border on tablet+ */
     .contact-info {
         padding-right: 2.5rem;
         border-right: 1.5px solid #111;
@@ -133,7 +131,7 @@ body.fade-out {
     }
 }
 
-/* ===== DESKTOP (992px+) ===== */
+/* ===== DESKTOP===== */
 @media (min-width: 992px) {
 
     .contact-section {
