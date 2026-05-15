@@ -101,7 +101,6 @@ body {
 }
 
 .about-left-col { 
-    border-bottom: 1.5px solid #111; 
     padding-bottom: 3rem; 
     margin-bottom: 3rem; 
 }
@@ -288,8 +287,8 @@ body {
 
     .landing-page {
         text-align: left;
-        padding: 0;
-        height: 100vh;
+        padding: 60px 0;
+        min-height: auto;
         align-items: center;
     }
 
@@ -348,3 +347,83 @@ body {
     }
 }
 
+/* ===== TABLET (768px – 991px) ===== */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* Landing page — switch to 2-col layout earlier */
+    .landing-page {
+        text-align: left;
+        padding: 80px 0 60px;
+        min-height: auto;
+    }
+
+    .landing-page h1 {
+        font-size: 5.5rem;
+        line-height: 0.85;
+    }
+
+    .hero-text-wrapper h6 {
+        letter-spacing: 5px;
+        font-size: 1rem;
+    }
+
+    /* Position the cursive subtitle like desktop */
+    .graphic-designer {
+        position: absolute;
+        font-size: 2.4rem;
+        right: -20px;
+        bottom: -36px;
+        text-align: unset;
+        margin-top: 0 !important;
+    }
+
+    /* Switch buttons to row layout */
+    .btn-container {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+    }
+
+    .landing-page .btn {
+        width: auto !important;
+        padding: 10px 28px !important;
+    }
+
+    /* Profile image — desktop version, scaled for tablet */
+    .profile-img {
+        content: url('images/desktop-picture.png');
+        max-width: 100%;
+        height: auto;
+        margin-top: 0;
+        transform: scale(1.05);
+    }
+
+    /* About section — keep bottom border on tablet (columns still stack) */
+    .about-left-col {
+        border-bottom: 1.5px solid #111;
+        border-right: none;
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Nav link hover — tablet can hover too */
+    .nav-link {
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+
+    /* Footer heading — slightly smaller on tablet */
+    .footer-heading {
+        font-size: 2.4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .landing-page {
+        padding: 0;
+        height: 100vh;
+    }
+}

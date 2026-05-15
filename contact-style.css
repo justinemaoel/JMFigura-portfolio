@@ -9,19 +9,19 @@ body {
     from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
 }
-
 body.fade-out {
     animation: fadeOut 0.35s ease forwards;
 }
-
 @keyframes fadeOut {
     from { opacity: 1; transform: translateY(0); }
     to   { opacity: 0; transform: translateY(-12px); }
 }
+
+/* ===== NAVBAR ===== */
 .navbar {
-    background-color: #DCDCDC !important; 
+    background-color: #DCDCDC !important;
     padding: 16px 24px;
-    border-bottom: 1px solid #c0c0c0; 
+    border-bottom: 1px solid #c0c0c0;
 }
 .navbar-brand {
     font-family: "Bebas Neue", sans-serif;
@@ -36,48 +36,120 @@ body.fade-out {
     margin-left: 12px;
 }
 
+/* ===== CONTACT SECTION — mobile base ===== */
+.contact-section {
+    padding: 50px 0;
+}
+
+/* Info column — visible on all screen sizes */
+.contact-info {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.contact-info h6 {
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+}
+
+.contact-info h1 {
+    font-family: "Bebas Neue", sans-serif !important;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 0;
+    color: #111;
+}
+
+.info-divider {
+    width: 40px;
+    height: 2px;
+    background-color: #111;
+    margin: 1rem 0;
+}
+
+.contact-info p {
+    font-size: 0.875rem;
+    color: #444;
+    line-height: 1.8;
+    margin-top: 0.5rem;
+}
+
+.contact-section .form-control {
+    background-color: transparent;
+    border: 1px solid #111;
+    font-size: 0.9rem;
+}
+.contact-section .form-control:focus {
+    background-color: transparent;
+    border-color: #111;
+    box-shadow: none;
+}
+.contact-section .form-control::placeholder {
+    color: #888;
+}
+
 /* ===== FOOTER ===== */
 .footer-page {
-    background-color: #DCDCDC; 
+    background-color: #DCDCDC;
 }
-
-.footer-heading {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 3rem;
-    line-height: 0.9;
-    letter-spacing: 1px;
-}
-
 .footer-logo {
     font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 8px; 
+    letter-spacing: 8px;
     font-size: 2.5rem;
     margin-top: 20px;
 }
 
-/* ===== DESKTOP ===== */
-@media (min-width: 992px) {
+/* ===== TABLET (768px – 991px) ===== */
+@media (min-width: 768px) {
 
-
-    .border-end-lg {
-        border-right: 2px solid #000 !important;
+    .contact-section {
+        padding: 60px 0;
     }
 
-    .footer-page h2 {
-        line-height: 1.1;
+    /* Info column with right border on tablet+ */
+    .contact-info {
+        padding-right: 2.5rem;
+        border-right: 1.5px solid #111;
     }
 
-    .border-start-lg {
-        border-left: 1px solid #000 !important;
+    .contact-info h1 {
+        font-size: 3rem;
     }
 
+    .info-divider {
+        margin: 1.2rem 0;
+    }
 
-    .nav-link {
-        transition: color 0.3s ease;
+    .contact-info p {
+        font-size: 0.875rem;
+        color: #444;
+        line-height: 1.8;
     }
 
     .nav-link:hover {
         text-decoration: underline;
         text-underline-offset: 8px;
+    }
+}
+
+/* ===== DESKTOP (992px+) ===== */
+@media (min-width: 992px) {
+
+    .contact-section {
+        padding: 80px 0;
+    }
+
+    .contact-info h1 {
+        font-size: 4.5rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+        max-width: 300px;
+    }
+
+    .info-divider {
+        margin: 1.5rem 0;
     }
 }
